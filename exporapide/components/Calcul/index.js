@@ -4,6 +4,8 @@ import { StyleSheet,Text, View } from 'react-native';
 import Tableau from '../Tableau';
 import TextInputCustom from '../TextInputCustom';
 
+import {APP_COLORS} from '../../Style/Colors';
+
 
 export default class Calcul extends React.Component {
   constructor(props) {
@@ -12,7 +14,8 @@ export default class Calcul extends React.Component {
     number: 0,
     mod: 0,
     puissance: 0,
-    tab: []
+    tab: [],
+    result: false
 
   };
 
@@ -49,22 +52,25 @@ export default class Calcul extends React.Component {
 
       <View style={styles.container}>
 
-        <Text>Nombre :</Text>
           <TextInputCustom
             action={(number) => this.setState({number})}
+            label="Nombre"
           />
 
-        <Text>Puissance :</Text>
           <TextInputCustom
             action={(puissance) => this.setState({puissance})}
+            label="Puissance"
           />
 
-        <Text>Modulo : </Text>
           <TextInputCustom
             action={(mod) => this.setState({mod})}
+            label="Modulo"
           />
-
-      <Text style={{textAlign: 'center'}}>{resp(parseInt(this.state.number),parseInt(this.state.mod),parseInt(this.state.puissance))[2]}</Text>
+        <Text style={{textAlign: 'center'}}>
+          {
+            this.state.number == 0 ? 'Entrer des valeurs' : resp(parseInt(this.state.number),parseInt(this.state.mod),parseInt(this.state.puissance))[2]
+          }
+        </Text>
         <Tableau ai={resp(parseInt(this.state.number),parseInt(this.state.mod),parseInt(this.state.puissance))[1]} alpha={resp(parseInt(this.state.number),parseInt(this.state.mod),parseInt(this.state.puissance))[0]}/>
     </View>
     );
@@ -74,5 +80,4 @@ export default class Calcul extends React.Component {
 const styles = StyleSheet.create({
   container: { flex: 1, padding: 5, paddingTop: 0, backgroundColor: 'orange' },
   head: { height: 40, backgroundColor: '#f1f8ff' },
-  text: { margin: 6 }
 });

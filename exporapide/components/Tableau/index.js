@@ -1,8 +1,11 @@
-import React, { Component } from 'react';
-import { StyleSheet,ScrollView, View, Button } from 'react-native';
+import React from 'react';
+import { StyleSheet,ScrollView, View } from 'react-native';
 import { Table, Row } from 'react-native-table-component';
+import {Button} from 'react-native-elements';
 
-export default class Tableau extends Component {
+import {APP_COLORS} from '../../Style/Colors';
+
+export default class Tableau extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,8 +31,16 @@ export default class Tableau extends Component {
     return (
       <View style={styles.container}>
 
-        <Button title="generate" onPress={this.creation}/>
-        <ScrollView>
+        <Button
+          title="Generate"
+          onPress={this.creation}
+          buttonStyle={{
+            backgroundColor: APP_COLORS.button
+          }}
+          />
+
+
+      <ScrollView>
         <Table borderStyle={{borderWidth: 2, borderColor: '#c8e1ff'}}>
 
           <Row data={this.state.tableHead} style={styles.head} textStyle={styles.text}/>
@@ -47,6 +58,6 @@ export default class Tableau extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 2, padding: 5, paddingTop: 4, backgroundColor: 'yellow' },
+  container: { flex: 2, padding: 5, paddingTop: 5, backgroundColor: 'yellow' },
   text: { margin: 6 }
 });

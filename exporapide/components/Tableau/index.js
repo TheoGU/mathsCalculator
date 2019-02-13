@@ -47,6 +47,6 @@ export default class Tableau extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 2, padding: 5, paddingTop: 4, backgroundColor: 'white' },
+  container: { flex: 2, padding: 5, paddingTop: 4, backgroundColor: 'yellow' },
   text: { margin: 6 }
 });

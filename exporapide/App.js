@@ -5,7 +5,7 @@ import { createDrawerNavigator, createAppContainer } from "react-navigation";
 
 import Calcul from './components/Calcul'
 import Tableau from './components/Tableau'
-import Setting from './components/Setting'
+import PgcdCalcul from './components/PgcdCalcul'
 
 class Home extends React.Component {
   static navigationOptions = {
@@ -28,7 +28,7 @@ class Pgcd extends React.Component {
 
   render() {
     return (
-      <Text>hello</Text>
+      <PgcdCalcul />
     );
   }
 }

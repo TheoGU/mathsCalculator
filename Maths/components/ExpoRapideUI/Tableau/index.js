@@ -3,7 +3,7 @@ import { StyleSheet,ScrollView, View } from 'react-native';
 import { Table, Row } from 'react-native-table-component';
 import {Button} from 'react-native-elements';
 
-import {APP_COLORS} from '../../Style/Colors';
+import {APP_COLORS} from '../../../Style/Colors';
 
 export default class Tableau extends React.Component {
   constructor(props) {

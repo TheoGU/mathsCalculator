@@ -5,15 +5,15 @@ import { View, Text, StyleSheet,ScrollView} from 'react-native';
 //CUSTOM DEPENDENCES
 import { Button } from 'react-native-elements';
 import { Table, Row } from 'react-native-table-component';
-import TextInputCustom from '../TextInputCustom';
+import TextInputCustom from '../../TextInputCustom';
 
 //STYLE
-import {APP_COLORS} from '../../Style/Colors'
+import {APP_COLORS} from '../../../Style/Colors'
 
 
 
 
-export default class PgcdCalcul extends React.Component {
+export default class PgcdUI extends React.Component {
   constructor(props){
     super(props);
     this.state = {

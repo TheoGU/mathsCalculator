@@ -1,11 +1,11 @@
+
 import React from 'react';
 import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
 import { createDrawerNavigator, createAppContainer } from "react-navigation";
 
-import Calcul from './components/ExpoRapideCalcul/Calcul'
-import Tableau from './components/ExpoRapideCalcul/Tableau'
-import PgcdCalcul from './components/PgcdCalcul'
+import ExpoUICalcul from './components/ExpoRapideUI/Calcul'
+import PgcdUI from './components/PgcdUI/Calcul'
 
 class ExpoRapide extends React.Component {
   static navigationOptions = {
@@ -15,7 +15,7 @@ class ExpoRapide extends React.Component {
     return (
       <View style={styles.container}>
         <StatusBar hidden />
-        <Calcul />
+        <ExpoUICalcul />
       </View>
     );
   }
@@ -28,7 +28,7 @@ class Pgcd extends React.Component {
 
   render() {
     return (
-      <PgcdCalcul />
+      <PgcdUI />
     );
   }
 }

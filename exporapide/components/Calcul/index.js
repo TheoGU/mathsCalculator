@@ -46,8 +46,6 @@ export default class Calcul extends React.Component {
       return resultat;
     }
 
-
-    const state = this.state;
     return (
 
       <View style={styles.container}>

@@ -4,6 +4,8 @@ import { View, Text, StyleSheet} from 'react-native';
 //CUSTOM DEPENDENCES
 import { Button, Input } from 'react-native-elements';
 import { Table, Row } from 'react-native-table-component';
+import TextInputCustom from '../TextInputCustom';
+
 //STYLE
 import {APP_COLORS} from '../../Style/Colors'
 
@@ -108,20 +110,16 @@ export default class PgcdCalcul extends React.Component {
     return (
       <View style={styles.container}>
         <View>
-        <Input
-          inputStyle={styles.input}
-          onChangeText={(a) => this.setState({a})}
-          value={this.state.a}
-          keyboardType="numeric"
-          maxLength={7}
+
+        <TextInputCustom
+          action={(a) => this.setState({a})}
+          label="A"
         />
-      <Input
-          inputStyle={styles.input}
-          onChangeText={(b) => this.setState({b})}
-          value={this.state.b}
-          keyboardType="numeric"
-          maxLength={7}
-        />
+      <TextInputCustom
+        action={(b) => this.setState({b})}
+        label="B"
+      />
+
       </View>
       <View style={{marginTop: 30}}>
         <Button

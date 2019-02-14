@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Button,Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
 import { createDrawerNavigator, createAppContainer } from "react-navigation";
 
@@ -7,7 +7,7 @@ import Calcul from './components/Calcul'
 import Tableau from './components/Tableau'
 import PgcdCalcul from './components/PgcdCalcul'
 
-class Home extends React.Component {
+class ExpoRapide extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Exponetiel Rapide',
   };
@@ -32,14 +32,29 @@ class Pgcd extends React.Component {
     );
   }
 }
+class Calculatrice extends React.Component {
+  static navigationOptions = {
+    drawerLabel: 'Calculatrice',
+  };
+
+  render() {
+    return (
+      <Text>calculette</Text>
+    );
+  }
+}
 
 const MyDrawerNavigator = createDrawerNavigator({
-  Home: {
-    screen: Home,
+  Calculatrice: {
+    screen: Calculatrice,
+  },
+  ExpoRapide: {
+    screen: ExpoRapide,
   },
   Notifications: {
     screen: Pgcd,
   },
+
 });
 
 const App = createAppContainer(MyDrawerNavigator);

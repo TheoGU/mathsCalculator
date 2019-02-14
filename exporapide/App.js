@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, StatusBar } from 'react-native';
 
 import Calcul from './components/Calcul'
 import Tableau from './components/Tableau'
+import Setting from './components/Setting'
 
 export default class App extends React.Component {
   render() {
@@ -10,6 +11,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
       <StatusBar hidden />
         <Calcul />
+        <Setting />
       </View>
     );
   }

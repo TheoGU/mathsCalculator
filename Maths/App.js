@@ -9,9 +9,7 @@ import { createDrawerNavigator, createAppContainer } from "react-navigation";
 
 import ExpoUICalcul from './components/ExpoRapideUI/Calcul'
 import PgcdUI from './components/PgcdUI/Calcul'
-
-import GradientCustom from './components/Gradient/GradientCustom';
-
+import CalculatriceUI from './components/CalculatriceUI/index.js'
 
 
 
@@ -20,10 +18,17 @@ class ExpoRapide extends React.Component {
     drawerLabel: 'Exponetiel Rapide',
   };
   render() {
+    const {width, height} = Dimensions.get('window');
+
     return (
       <View style={styles.container}>
         <StatusBar hidden />
+          <Gradient
+              gradient="linear-gradient(120deg, #54a0ff 0%, #00d2d3 100%)"
+              style={{width,height}}
+            >
         <ExpoUICalcul />
+        </Gradient>
       </View>
     );
   }
@@ -35,8 +40,17 @@ class Pgcd extends React.Component {
   };
 
   render() {
+    const {width, height} = Dimensions.get('window');
+
     return (
-        <PgcdUI />
+      <View>
+        <Gradient
+            gradient="linear-gradient(-50deg, #54a0ff 0%, #ff9ff3 100%)"
+            style={{width,height}}
+          >
+          <PgcdUI />
+          </Gradient>
+      </View>
     );
   }
 }
@@ -46,17 +60,8 @@ class Calculatrice extends React.Component {
   };
 
   render() {
-    const {width, height} = Dimensions.get('window');
-
     return (
-      <View>
-      <Gradient
-          gradient="linear-gradient(120deg, #54a0ff 0%, #00d2d3 100%)"
-          style={{width,height}}
-        >
-        <Text>Calculette</Text>
-        </Gradient>
-      </View>
+        <CalculatriceUI />
     );
   }
 }
@@ -90,7 +95,7 @@ const App = createAppContainer(MyDrawerNavigator);
 
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 1, paddingTop: 5 },
+  container: { flex: 1},
 });
 
 

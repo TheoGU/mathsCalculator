@@ -117,7 +117,7 @@ export default class PgcdUI extends React.Component {
         />
       <TextInputCustom
         action={(b) => this.setState({b})}
-        label="B"
+        label="B (Modulo)"
       />
 
 

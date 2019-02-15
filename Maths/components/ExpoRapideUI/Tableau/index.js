@@ -58,6 +58,6 @@ export default class Tableau extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 2, padding: 5, paddingTop: 5, backgroundColor: 'yellow'},
+  container: { flex: 2, padding: 5, paddingTop: 5},
   text: { margin: 6 }
 });

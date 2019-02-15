@@ -76,5 +76,5 @@ export default class Calcul extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 5, paddingTop: 0, backgroundColor: 'orange' },
+  container: { flex: 1},
 });

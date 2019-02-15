@@ -145,6 +145,6 @@ export default class PgcdUI extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 5, paddingTop: 5, backgroundColor: 'yellow'},
+  container: { flex: 1, padding: 5, paddingTop: 5},
   text: { margin: 6 }
 });

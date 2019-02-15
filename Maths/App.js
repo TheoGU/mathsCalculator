@@ -1,11 +1,19 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, StatusBar } from 'react-native';
+import { StyleSheet, Text, View, StatusBar,Dimensions } from 'react-native';
+
+import Gradient from 'react-native-css-gradient';
+
 
 import { createDrawerNavigator, createAppContainer } from "react-navigation";
 
 import ExpoUICalcul from './components/ExpoRapideUI/Calcul'
 import PgcdUI from './components/PgcdUI/Calcul'
+
+import GradientCustom from './components/Gradient/GradientCustom';
+
+
+
 
 class ExpoRapide extends React.Component {
   static navigationOptions = {
@@ -28,7 +36,7 @@ class Pgcd extends React.Component {
 
   render() {
     return (
-      <PgcdUI />
+        <PgcdUI />
     );
   }
 }
@@ -38,11 +46,21 @@ class Calculatrice extends React.Component {
   };
 
   render() {
+    const {width, height} = Dimensions.get('window');
+
     return (
-      <Text>calculette</Text>
+      <View>
+      <Gradient
+          gradient="linear-gradient(120deg, #54a0ff 0%, #00d2d3 100%)"
+          style={{width,height}}
+        >
+        <Text>Calculette</Text>
+        </Gradient>
+      </View>
     );
   }
 }
+
 
 const MyDrawerNavigator = createDrawerNavigator({
   Calculatrice: {
@@ -51,19 +69,28 @@ const MyDrawerNavigator = createDrawerNavigator({
   ExpoRapide: {
     screen: ExpoRapide,
   },
-  Notifications: {
+  Pgcd: {
     screen: Pgcd,
   },
+},
+{
+  initialRouteName: 'Calculatrice',
+  drawerType: 'front',
 
+  contentOptions:{
+  activeTintColor: '#1dd1a1',
+  inactiveTintColor: '#48dbfb',
+  activeBackgroundColor:'#222'
+},
+drawerBackgroundColor: '#333',
+ drawerWidth: 210
 });
 
 const App = createAppContainer(MyDrawerNavigator);
 
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 1, paddingTop: 5, backgroundColor: 'red' },
-  head: { height: 40, backgroundColor: '#f1f8ff' },
-  text: { margin: 6 }
+  container: { flex: 1, padding: 1, paddingTop: 5 },
 });
 
 
